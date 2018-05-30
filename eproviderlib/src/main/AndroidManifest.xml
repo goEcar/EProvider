@@ -1,0 +1,14 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ecar.epark.eproviderlib">
+
+    <application android:allowBackup="true" android:label="@string/app_name"
+        android:supportsRtl="true">
+
+        <provider
+            android:name="com.ecar.epark.eproviderlib.provider.SPContentProvider"
+            android:authorities="${applicationId}.epush.provider"
+            android:process=":epush"
+            android:exported="false" />
+    </application>
+
+</manifest>
