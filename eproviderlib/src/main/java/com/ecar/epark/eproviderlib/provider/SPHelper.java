@@ -8,30 +8,30 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.text.TextUtils;
+import android.util.Log;
 
-import com.ecar.pushlib.util.EpushUtil;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import static com.ecar.pushlib.provider.ConstantUtil.CONTENT_URI;
-import static com.ecar.pushlib.provider.ConstantUtil.CURSOR_COLUMN_NAME;
-import static com.ecar.pushlib.provider.ConstantUtil.CURSOR_COLUMN_TYPE;
-import static com.ecar.pushlib.provider.ConstantUtil.CURSOR_COLUMN_VALUE;
-import static com.ecar.pushlib.provider.ConstantUtil.NULL_STRING;
-import static com.ecar.pushlib.provider.ConstantUtil.SEPARATOR;
-import static com.ecar.pushlib.provider.ConstantUtil.TYPE_BOOLEAN;
-import static com.ecar.pushlib.provider.ConstantUtil.TYPE_CLEAN;
-import static com.ecar.pushlib.provider.ConstantUtil.TYPE_CONTAIN;
-import static com.ecar.pushlib.provider.ConstantUtil.TYPE_FLOAT;
-import static com.ecar.pushlib.provider.ConstantUtil.TYPE_GET_ALL;
-import static com.ecar.pushlib.provider.ConstantUtil.TYPE_INT;
-import static com.ecar.pushlib.provider.ConstantUtil.TYPE_LONG;
-import static com.ecar.pushlib.provider.ConstantUtil.TYPE_STRING;
-import static com.ecar.pushlib.provider.ConstantUtil.TYPE_STRING_SET;
-import static com.ecar.pushlib.provider.ConstantUtil.VALUE;
+import static com.ecar.epark.eproviderlib.provider.ConstantUtil.CONTENT_URI;
+import static com.ecar.epark.eproviderlib.provider.ConstantUtil.CURSOR_COLUMN_NAME;
+import static com.ecar.epark.eproviderlib.provider.ConstantUtil.CURSOR_COLUMN_TYPE;
+import static com.ecar.epark.eproviderlib.provider.ConstantUtil.CURSOR_COLUMN_VALUE;
+import static com.ecar.epark.eproviderlib.provider.ConstantUtil.NULL_STRING;
+import static com.ecar.epark.eproviderlib.provider.ConstantUtil.SEPARATOR;
+import static com.ecar.epark.eproviderlib.provider.ConstantUtil.TYPE_BOOLEAN;
+import static com.ecar.epark.eproviderlib.provider.ConstantUtil.TYPE_CLEAN;
+import static com.ecar.epark.eproviderlib.provider.ConstantUtil.TYPE_CONTAIN;
+import static com.ecar.epark.eproviderlib.provider.ConstantUtil.TYPE_FLOAT;
+import static com.ecar.epark.eproviderlib.provider.ConstantUtil.TYPE_GET_ALL;
+import static com.ecar.epark.eproviderlib.provider.ConstantUtil.TYPE_INT;
+import static com.ecar.epark.eproviderlib.provider.ConstantUtil.TYPE_LONG;
+import static com.ecar.epark.eproviderlib.provider.ConstantUtil.TYPE_STRING;
+import static com.ecar.epark.eproviderlib.provider.ConstantUtil.TYPE_STRING_SET;
+import static com.ecar.epark.eproviderlib.provider.ConstantUtil.VALUE;
 
 public class SPHelper {
     public static final String COMMA_REPLACEMENT = "__COMMA__";
@@ -59,7 +59,7 @@ public class SPHelper {
     public boolean checkContext() {
         if (context == null) {
 //            throw new IllegalStateException("context has not been initialed");
-            EpushUtil.loge("qob", "SPHelper context is null");
+            Log.e("qob", "SPHelper context is null");
             return false;
         }
         return true;

@@ -6,32 +6,31 @@ import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.net.Uri;
 import android.os.Process;
-
-import com.ecar.pushlib.util.EpushUtil;
+import android.util.Log;
 
 import java.util.Map;
 import java.util.Set;
 
-import static com.ecar.pushlib.provider.ConstantUtil.CURSOR_COLUMN_NAME;
-import static com.ecar.pushlib.provider.ConstantUtil.CURSOR_COLUMN_TYPE;
-import static com.ecar.pushlib.provider.ConstantUtil.CURSOR_COLUMN_VALUE;
-import static com.ecar.pushlib.provider.ConstantUtil.SEPARATOR;
-import static com.ecar.pushlib.provider.ConstantUtil.TYPE_BOOLEAN;
-import static com.ecar.pushlib.provider.ConstantUtil.TYPE_CLEAN;
-import static com.ecar.pushlib.provider.ConstantUtil.TYPE_CONTAIN;
-import static com.ecar.pushlib.provider.ConstantUtil.TYPE_FLOAT;
-import static com.ecar.pushlib.provider.ConstantUtil.TYPE_GET_ALL;
-import static com.ecar.pushlib.provider.ConstantUtil.TYPE_INT;
-import static com.ecar.pushlib.provider.ConstantUtil.TYPE_LONG;
-import static com.ecar.pushlib.provider.ConstantUtil.TYPE_STRING;
-import static com.ecar.pushlib.provider.ConstantUtil.VALUE;
+import static com.ecar.epark.eproviderlib.provider.ConstantUtil.CURSOR_COLUMN_NAME;
+import static com.ecar.epark.eproviderlib.provider.ConstantUtil.CURSOR_COLUMN_TYPE;
+import static com.ecar.epark.eproviderlib.provider.ConstantUtil.CURSOR_COLUMN_VALUE;
+import static com.ecar.epark.eproviderlib.provider.ConstantUtil.SEPARATOR;
+import static com.ecar.epark.eproviderlib.provider.ConstantUtil.TYPE_BOOLEAN;
+import static com.ecar.epark.eproviderlib.provider.ConstantUtil.TYPE_CLEAN;
+import static com.ecar.epark.eproviderlib.provider.ConstantUtil.TYPE_CONTAIN;
+import static com.ecar.epark.eproviderlib.provider.ConstantUtil.TYPE_FLOAT;
+import static com.ecar.epark.eproviderlib.provider.ConstantUtil.TYPE_GET_ALL;
+import static com.ecar.epark.eproviderlib.provider.ConstantUtil.TYPE_INT;
+import static com.ecar.epark.eproviderlib.provider.ConstantUtil.TYPE_LONG;
+import static com.ecar.epark.eproviderlib.provider.ConstantUtil.TYPE_STRING;
+import static com.ecar.epark.eproviderlib.provider.ConstantUtil.VALUE;
 
 
 public class SPContentProvider extends ContentProvider {
 
     @Override
     public boolean onCreate() {
-        EpushUtil.loge("qob","SPContentProvider onCreate ,process Pid is "+ Process.myPid());
+        Log.e("qob","SPContentProvider onCreate ,process Pid is "+ Process.myPid());
         return true;
     }
 
