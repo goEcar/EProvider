@@ -1,4 +1,4 @@
-package com.ecar.epark.eproviderlib.provider;
+package com.ecar.pushlib.provider;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;
@@ -7,6 +7,8 @@ import android.database.MatrixCursor;
 import android.net.Uri;
 import android.os.Process;
 import android.util.Log;
+
+import com.ecar.epark.eproviderlib.provider.SPHelperImpl;
 
 import java.util.Map;
 import java.util.Set;

@@ -5,7 +5,7 @@
         android:supportsRtl="true">
 
         <provider
-            android:name="com.ecar.epark.eproviderlib.provider.SPContentProvider"
+            android:name="com.ecar.pushlib.provider.SPContentProvider"
             android:authorities="${applicationId}.epush.provider"
             android:process=":epush"
             android:exported="false" />

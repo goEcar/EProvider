@@ -7,7 +7,7 @@ import java.lang.ref.SoftReference;
 import java.util.HashMap;
 import java.util.Map;
 
-class SPHelperImpl {
+public class SPHelperImpl {
     private static final String TAG = "SPHelperImpl";
 
     private static final String MAINSPNAME = "SPHelper_sp_main";
@@ -58,7 +58,7 @@ class SPHelperImpl {
     }
 
 
-    synchronized static <T> void save(Context context, String name, T t) {
+    public synchronized static <T> void save(Context context, String name, T t) {
         SharedPreferences sp = getSP(context);
         if (sp == null) return;
 
@@ -85,7 +85,7 @@ class SPHelperImpl {
         setValueToCached(name, t);
     }
 
-    static String get(Context context, String name, String type) {
+    public static String get(Context context, String name, String type) {
         Object value = getCachedValue(name);
         if (value != null) {
             return value + "";
@@ -117,43 +117,43 @@ class SPHelperImpl {
         }
     }
 
-    static String getString(Context context, String name, String defaultValue) {
+    public static String getString(Context context, String name, String defaultValue) {
         SharedPreferences sp = getSP(context);
         if (sp == null) return defaultValue;
         return sp.getString(name, defaultValue);
     }
 
-    static int getInt(Context context, String name, int defaultValue) {
+    public static int getInt(Context context, String name, int defaultValue) {
         SharedPreferences sp = getSP(context);
         if (sp == null) return defaultValue;
         return sp.getInt(name, defaultValue);
     }
 
-    static float getFloat(Context context, String name, float defaultValue) {
+    public static float getFloat(Context context, String name, float defaultValue) {
         SharedPreferences sp = getSP(context);
         if (sp == null) return defaultValue;
         return sp.getFloat(name, defaultValue);
     }
 
-    static boolean getBoolean(Context context, String name, boolean defaultValue) {
+    public static boolean getBoolean(Context context, String name, boolean defaultValue) {
         SharedPreferences sp = getSP(context);
         if (sp == null) return defaultValue;
         return sp.getBoolean(name, defaultValue);
     }
 
-    static long getLong(Context context, String name, long defaultValue) {
+    public static long getLong(Context context, String name, long defaultValue) {
         SharedPreferences sp = getSP(context);
         if (sp == null) return defaultValue;
         return sp.getLong(name, defaultValue);
     }
 
-    static boolean contains(Context context, String name) {
+    public static boolean contains(Context context, String name) {
         SharedPreferences sp = getSP(context);
         if (sp == null) return false;
         return sp.contains(name);
     }
 
-    static void remove(Context context, String name) {
+    public static void remove(Context context, String name) {
         SharedPreferences sp = getSP(context);
         if (sp == null) return;
         SharedPreferences.Editor editor = sp.edit();
@@ -161,7 +161,7 @@ class SPHelperImpl {
         editor.commit();
     }
 
-    static void clear(Context context) {
+    public static void clear(Context context) {
         SharedPreferences sp = getSP(context);
         SharedPreferences.Editor editor = sp.edit();
         editor.clear();
@@ -169,7 +169,7 @@ class SPHelperImpl {
         cleanCachedValue();
     }
 
-    static Map<String,?> getAll(Context context){
+    public static Map<String,?> getAll(Context context){
         SharedPreferences sp = getSP(context);
         return sp.getAll();
     }
